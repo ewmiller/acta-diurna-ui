@@ -1,0 +1,23 @@
+{
+  "name": "acta-diurna-ui",
+  "version": "1.0.0",
+  "description": "Front end for NYT article summary app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ewmiller/acta-diurna-ui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ewmiller/acta-diurna-ui/issues"
+  },
+  "homepage": "https://github.com/ewmiller/acta-diurna-ui#readme",
+  "devDependencies": {
+    "typescript": "^4.8.3"
+  }
+}
