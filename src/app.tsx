@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { Col, Row, Container, Dropdown } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
@@ -16,8 +17,23 @@ export class App extends React.Component {
     timeFrame: 'Day'
   };
 
+  api = axios.create({
+    baseURL: 'https://api.nytimes.com/svc/mostpopular/v2'
+  });
+
   setTimeFrame(arg: TimeFrame) {
     this.setState({ ...this.state, timeFrame: arg })
+  }
+
+  async fetchArticles(timeFrame: TimeFrame) {
+    const timeNumber = timeFrame === 'Day' ? 1 : timeFrame === 'Week' ? 7 : 30;
+    const fetchResult = await this.api.post(`/viewed/${timeNumber}.json?api-key=${process.env.NYT_API_KEY}`);
+    console.log(fetchResult);
+  }
+
+  componentDidMount(): void {
+    console.log('Fetching articles with time frame: ' + this.state.timeFrame);
+    this.fetchArticles(this.state.timeFrame);
   }
 
   render() {
