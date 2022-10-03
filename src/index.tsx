@@ -1,7 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { App } from './app';
+
+// import stylesheets
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 render(
-    <h1>Acta Diurna</h1>,
+    <App />,
     document.getElementById('root')
 )
